@@ -75,7 +75,7 @@ void showMyDeque(std::deque<dqCompetitor>& compet)
 	}
 }
 
-void fillMyDeque(std::deque<dqCompetitor>& compet, int& VectQuantity)
+void fillMyDeque(std::deque<dqCompetitor>& compet, int& dqQuantity)
 {
 
 	for (auto& el : compet) {

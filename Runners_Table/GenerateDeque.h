@@ -17,4 +17,4 @@ std::string getNamesDq() noexcept;
 std::string getSurNamesDq() noexcept;
 
 void showMyDeque(std::deque<dqCompetitor>& compet);
-void fillMyDeque(std::deque <dqCompetitor>& compet, int& VectQuantity);
+void fillMyDeque(std::deque <dqCompetitor>& compet, int& dqQuantity);
