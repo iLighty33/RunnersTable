@@ -139,11 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GenerateDeque.cpp" />
     <ClCompile Include="GenerateVector.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CompetitorVector.h" />
+    <ClInclude Include="GenerateDeque.h" />
     <ClInclude Include="GenerateVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

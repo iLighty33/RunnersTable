@@ -1,16 +1,16 @@
 #pragma once
-#include "GenerateVector.h"
+
+#include "GenerateDeque.h"
 #include <iostream>
 #include <fstream>
-#include <vector>
+#include <deque>
 #include <string>
 
 //std::vector<int> GenerateVector::idS_;
 
-std::string getNames() noexcept{
+std::string getNamesDq() noexcept {
 
-	std::vector<std::string> dataName;
-	dataName.reserve(34);
+	std::deque<std::string> dataName;
 
 	std::fstream fs;
 	fs.open("names.txt", std::ios::in);
@@ -32,9 +32,8 @@ std::string getNames() noexcept{
 
 }
 
-std::string getSurNames() noexcept {
-	std::vector<std::string> dataSurName;
-	dataSurName.reserve(34);
+std::string getSurNamesDq() noexcept {
+	std::deque<std::string> dataSurName;
 
 	std::fstream fs;
 	fs.open("surNames.txt", std::ios::in);
@@ -56,19 +55,19 @@ std::string getSurNames() noexcept {
 
 }
 
-void showMyVector(std::vector<Competitor>& compet)
+void showMyDeque(std::deque<dqCompetitor>& compet)
 {
-	std::cout << "\n => Vector realization <=\n";
+	std::cout << "\n => Deque realization <=";
 
 	for (int i = 0; i < 1; i++)
-		std::cout << " Id:\t" << "Result:\t" << " Name:\t" << "Surname:\n";
-	for (auto & el: compet) {
+		std::cout << "\n Id:\t" << "Result:\t" << " Name:\t" << "Surname:\n";
+	for (auto& el : compet) {
 
 		if (el.id_ == 0 || el.result_ == 0.00) {
 			continue;
 		}
 
-		std::cout << " " << el.id_ << " ";
+		std::cout << " " << el.id_ << "";
 		std::cout << " " << el.result_ << " ";
 		std::cout << " " << el.name_ << " ";
 		std::cout << " " << el.surName_ << " ";
@@ -76,24 +75,24 @@ void showMyVector(std::vector<Competitor>& compet)
 	}
 }
 
-void fillMyVector(std::vector<Competitor>& compet, int &VectQuantity)
+void fillMyDeque(std::deque<dqCompetitor>& compet, int& VectQuantity)
 {
 
-	for (auto & el: compet) {
-		compet.emplace_back(getUniqueId(), resultsOfRace(), getNames(), getSurNames());
+	for (auto& el : compet) {
+		compet.emplace_back(getUniqueIdDq(), resultsOfRaceDq(), getNamesDq(), getSurNamesDq());
 	}
 }
 
-int getUniqueId() noexcept  {
+int getUniqueIdDq() noexcept {
 	int myNum = rand() % (99999 - 10000 + 1) + 10000;
 	return myNum;
 }
 
-double resultsOfRace() noexcept {
+double resultsOfRaceDq() noexcept {
 	double myResult = 7.0 + (double)rand() / RAND_MAX * (20.0 - 7.0);
 	return myResult;
 }
 
-Competitor::Competitor()
+dqCompetitor::dqCompetitor()
 {
 }

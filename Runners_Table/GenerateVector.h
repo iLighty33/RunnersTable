@@ -1,25 +1,20 @@
 #pragma once
 #include <vector>
-#include <fstream>
 #include <string>
 
-class GenerateVector {
-public:
-    GenerateVector();
-    ~GenerateVector();
-
-
-    std::string getNames() const {
-        return names_[rand() % names_.size()];
-    }
-
-    std::string getSurNames() const {
-        return surNames_[rand() & surNames_.size()];
-    }
-
-private:
-    std::vector<std::string> names_;
-    std::vector<std::string> surNames_;
-    std::vector<int> idS_;
-
+struct Competitor {
+    std::string name_ = "";
+    std::string surName_ = "";
+    double result_ = 0;
+    int id_ = 0;
+    Competitor();
+    Competitor(int id_, double result_, std::string name_, std::string surName_) : id_(id_), result_(result_), name_(name_), surName_ (surName_) {}
 };
+
+int getUniqueId() noexcept;
+double resultsOfRace() noexcept;
+std::string getNames() noexcept;
+std::string getSurNames() noexcept;
+
+void showMyVector(std::vector<Competitor>& compet);
+void fillMyVector(std::vector <Competitor>& compet, int& VectQuantity);

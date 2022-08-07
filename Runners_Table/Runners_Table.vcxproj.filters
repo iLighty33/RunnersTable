@@ -21,12 +21,15 @@
     <ClCompile Include="GenerateVector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GenerateDeque.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CompetitorVector.h">
+    <ClInclude Include="GenerateVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GenerateVector.h">
+    <ClInclude Include="GenerateDeque.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
